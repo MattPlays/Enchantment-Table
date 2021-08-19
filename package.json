@@ -1,6 +1,6 @@
 {
   "name": "enchantment-table",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Enchantment-Table is a package designed to translated to and from the Minecraft Enchantment Table language or less commonly known as The Standard Galactic Alphabet.",
   "main": "index.js",
   "author": "MattPlays (https://github.com/MattPlays/)",
