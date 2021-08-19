@@ -1,9 +1,4 @@
-const fs = require("fs");
-const glob = require("glob");
-const path = require("path");
-class Translator {
-	constructor() {
-		this.dictionary = {
+let dictionary = {
 			"a": "ᔑ",
 			"b": "ʖ",
 			"c": "ᓵ",
@@ -31,7 +26,7 @@ class Translator {
 			"y": "||",
 			"z": "⨅",
 		};
-		this.reverse_dictionary = {
+let reverse_dictionary = {
 			"ᔑ": "a",
 			"ʖ": "b",
 			"ᓵ": "c",
@@ -59,25 +54,21 @@ class Translator {
 			"||": "y",
 			"⨅": "z",
 		}
-	}
 	/**
 	 * 
 	 * @param {string} text Text to be translated.
 	 * @param {boolean} reverse Wether or not the inputted text is Enchantment table or english. 
 	 * @returns {string} Output (Text or Enchantment Table)
 	 */
-	translate(text, reverse) {
+	function translate(text, reverse) {
 		text = [...text.toLowerCase()];
 		var translatedText = "";
 		for (let i = 0; i < text.length; i++) {
 			(reverse) ? ((text[i] == "|" && text[i + 1] == "|") ? (text[i] = "||", text.splice(i + 1, 1)) : text[i] = text[i]) : text[i] = text[i];
 			(reverse) ? ((text[i] == "!" && text[i + 1] == "¡") ? (text[i] = "!¡", text.splice(i + 1, 1)) : text[i] = text[i]) : text[i] = text[i];
-			var translatedLetter = (reverse) ? this.reverse_dictionary[text[i]] : this.dictionary[text[i]];
+			var translatedLetter = (reverse) ? reverse_dictionary[text[i]] : dictionary[text[i]];
 			(translatedLetter === undefined) ? translatedText += text[i]: translatedText += translatedLetter;
 		}
 		return translatedText;
 	}
-}
-module.exports = {
-	Translator: Translator,
-};
+module.exports = translate;
