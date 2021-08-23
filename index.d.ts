@@ -1,4 +1,1 @@
-export class Translator {
-    constructor(){};
-    translate(text: string, reverse: boolean): string;
-}
+export function translate(text: string, reverse: boolean): string;
