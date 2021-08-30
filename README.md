@@ -1,5 +1,5 @@
 # Enchantment- Table
- Enchantment-Table is a package designed to translated to and from the *Minecraft Enchantment Table language* or less commonly known as The Standard Galactic Alphabet.
+This package allows text to be translated to and from the Minecraft [Enchantment Table Language](https://nl.wikipedia.org/wiki/Standard_Galactic_Alphabet)
 
 # Installation
 ```bash

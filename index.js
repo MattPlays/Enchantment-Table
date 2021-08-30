@@ -61,14 +61,13 @@ let reverse_dictionary = {
 	 * @returns {string} Output (Text or Enchantment Table)
 	 */
 	function translate(text, reverse) {
-		text = [...text.toLowerCase()];
-		var translatedText = "";
-		for (let i = 0; i < text.length; i++) {
-			(reverse) ? ((text[i] == "|" && text[i + 1] == "|") ? (text[i] = "||", text.splice(i + 1, 1)) : text[i] = text[i]) : text[i] = text[i];
-			(reverse) ? ((text[i] == "!" && text[i + 1] == "¡") ? (text[i] = "!¡", text.splice(i + 1, 1)) : text[i] = text[i]) : text[i] = text[i];
-			var translatedLetter = (reverse) ? reverse_dictionary[text[i]] : dictionary[text[i]];
-			(translatedLetter === undefined) ? translatedText += text[i]: translatedText += translatedLetter;
-		}
+		var translatedText = [...text.toLowerCase()].map((letter, i, arr) => {
+			(reverse) ? ((letter == "|" && arr[i + 1] == "|") ? (letter = "||", arr.splice(i + 1, 1)) : letter = letter) : letter = letter;
+			(reverse) ? ((letter == "!" && arr[i + 1] == "¡") ? (letter = "!¡", arr.splice(i + 1, 1)) : letter = letter) : letter = letter;
+			var translatedLetter = (reverse) ? reverse_dictionary[letter] : dictionary[letter];
+			(translatedLetter === undefined) ? translatedText += letter: translatedText += translatedLetter;
+			return translatedLetter;
+		}).join("");
 		return translatedText;
 	}
 module.exports = translate;
