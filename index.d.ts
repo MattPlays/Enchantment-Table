@@ -25,6 +25,7 @@ const dictionary = {
     "x": "/",
     "y": "||",
     "z": "⨅",
+    " ": " ",
 };
 const reverse_dictionary = {
     "ᔑ": "a",
@@ -53,6 +54,7 @@ const reverse_dictionary = {
     "/": "x",
     "||": "y",
     "⨅": "z",
+    " ": " ",
 }
 export function translate(text: string, reverse: boolean): string;
 export {dictionary, reverse_dictionary}

@@ -10,9 +10,9 @@ npm install enchantment-table --save
 ```javascript
 const Enchant = require("enchantment-table")
 
-console.log(Enchant("Hello World"));
+console.log(Enchant.translate("Hello World"));
 // ⍑ᒷꖎꖎ𝙹 ∴𝙹∷ꖎ↸
 
-console.log(Enchant("ᒲ╎リᒷᓵ∷ᔑ⎓ℸ ╎ᓭ ᔑ∴ᒷᓭ𝙹ᒲᒷ", true));
+console.log(Enchant.translate("ᒲ╎リᒷᓵ∷ᔑ⎓ℸ ╎ᓭ ᔑ∴ᒷᓭ𝙹ᒲᒷ", true));
 // minecraft is awesome
 ```
