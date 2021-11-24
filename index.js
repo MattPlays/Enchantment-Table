@@ -25,6 +25,7 @@ let dictionary = {
 	"x": "/",
 	"y": "||",
 	"z": "⨅",
+	" ": " ",
 };
 let reverse_dictionary = {
 	"ᔑ": "a",
@@ -53,6 +54,7 @@ let reverse_dictionary = {
 	"/": "x",
 	"||": "y",
 	"⨅": "z",
+	" ": " ",
 }
 /**
  * 
